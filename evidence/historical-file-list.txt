@@ -1,0 +1,18 @@
+Historical filesystem listing — publication extract
+Source: original logs/Texto pegado(20261013-170734).txt, lines 1542–1553
+Personal profile prefix replaced; timestamps, sizes and relative paths preserved.
+
+2026-10-13 13:47:12 1216512 %LOCALAPPDATA%\Temp\S.msi
+2026-10-13 13:40:22    2196 %LOCALAPPDATA%\[zwHwLAbE\manifest.json
+2026-10-13 13:40:22    3908 %LOCALAPPDATA%\[zwHwLAbE\icons_071a05\icon_71b90e.png
+2026-10-13 13:40:22     618 %LOCALAPPDATA%\[zwHwLAbE\rules_1ce885\rule_358522.json
+2026-10-13 13:40:22    8054 %LOCALAPPDATA%\[zwHwLAbE\v529vcx\d3q4k7vt0\adxz7z0e.js
+2026-10-13 13:40:22    3061 %LOCALAPPDATA%\[zwHwLAbE\v529vcx\d3q4k7vt0\cc2qmcl.js
+2026-10-13 13:40:22   15739 %LOCALAPPDATA%\[zwHwLAbE\v529vcx\d3q4k7vt0\pyoj9n70a5.js
+2026-10-13 13:40:22   12453 %LOCALAPPDATA%\[zwHwLAbE\v529vcx\d3q4k7vt0\q50e2clj.js
+2026-10-13 13:40:22    3273 %LOCALAPPDATA%\[zwHwLAbE\v529vcx\d3q4k7vt0\utc27ra.js
+2026-10-13 13:40:22   20900 %LOCALAPPDATA%\[zwHwLAbE\v529vcx\d3q4k7vt0\wkzdlyyq3k.js
+2026-10-13 13:40:22    4213 %LOCALAPPDATA%\[zwHwLAbE\v529vcx\d3q4k7vt0\x65t3imxv.js
+2026-10-13 13:40:22   55854 %LOCALAPPDATA%\[zwHwLAbE\v529vcx\d3q4k7vt0\yy39sl1f.js
+
+These timestamps do not establish the exact time of malware execution.

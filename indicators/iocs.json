@@ -1,0 +1,20 @@
+{
+  "case_id": "CASE-2026-10-13-SYNERINTEGRATION",
+  "classification": "Browser stealer / crypto-focused credential and session theft / clipper capabilities; unattributed family",
+  "source_ip": [
+    "23.94.xxx.xxx"
+  ],
+  "msi": {
+    "product_name": "SynerIntegration",
+    "version": "4.1.6",
+    "publisher_claim": "Sare Level Corp",
+    "signed": false,
+    "sha256": "EEB374E3E6593752C0ECFCC616B949F608EEFF6155B81853BDF8FB52E5EC6EB4"
+  },
+  "extension": {
+    "display_name": "Save to Google Drive",
+    "declared_version": "4.0.6",
+    "derived_extension_id": "jdjnfljnaindmpjemockmakaioiacjen"
+  },
+  "notes": "Selected historical fields; endpoint omitted. MSI hash not recalculated. Classification provisional; publisher and display name are claims, not attribution."
+}

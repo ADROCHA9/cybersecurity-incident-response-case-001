@@ -1,0 +1,18 @@
+# Prevent accidental inclusion of samples and private evidence
+*.zip
+*.7z
+*.rar
+*.msi
+*.exe
+*.dll
+*.e4
+*.js
+*.ps1
+*.vbs
+*.cmd
+*.bat
+*.log
+.env
+samples/
+private/
+raw-evidence/

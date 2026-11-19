@@ -1,0 +1,21 @@
+Original defensive YARA rule excerpt — defense/synerintegration_20261013.yar, lines 17–34.
+Research only. Current compilation and false-positive rate not validated.
+
+rule SynerIntegration_FakeDrive_Extension_20261013
+{
+    meta:
+        description = "Detects distinctive strings from the observed fake Save to Google Drive extension"
+        author = "Case 2026-10-13 defensive research"
+    strings:
+        $name = "Save to Google Drive" ascii
+        $id = "jdjnfljnaindmpjemockmakaioiacjen" ascii
+        $c1 = "GET_COOKIES" ascii
+        $c2 = "GET_HISTORY" ascii
+        $c3 = "GET_DOWNLOADS" ascii
+        $c4 = "TAB_NAVIGATE_AND_FETCH" ascii
+        $seed1 = "bip39Wordlist" ascii
+        $seed2 = "moneroWordlist" ascii
+        $csp = "content-security-policy" ascii
+    condition:
+        ($name and 3 of ($c*)) or (all of ($seed*) and $csp)
+}

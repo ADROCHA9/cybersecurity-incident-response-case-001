@@ -1,0 +1,18 @@
+Selected lines — original defense/PURGE_SYNERINTEGRATION.ps1, lines 16–38.
+Documentary excerpt; address masked; not execution output. Do not execute.
+
+Write-Host '=== 0. TEMPORARY CONTAINMENT ===' -ForegroundColor Cyan
+if (-not (Get-NetFirewallRule -DisplayName 'CASE-SYNER-BLOCK-23.94.xxx.xxx' -ErrorAction SilentlyContinue)) {
+    New-NetFirewallRule -DisplayName 'CASE-SYNER-BLOCK-23.94.xxx.xxx' -Direction Outbound -Action Block -RemoteAddress $BadIP -Profile Any | Out-Null
+}
+Write-Host "Blocked outbound IP $BadIP"
+
+Write-Host '=== 1. PRE-CLEANUP AUDIT ===' -ForegroundColor Cyan
+Get-CimInstance Win32_Process | Where-Object { ($_.Name + ' ' + $_.CommandLine + ' ' + $_.ExecutablePath) -match $IOC } |
+    Select-Object ProcessId,ParentProcessId,Name,ExecutablePath,CommandLine | Format-List | Out-String | Tee-Object "$LogDir\processes_before.txt"
+Get-ScheduledTask -ErrorAction SilentlyContinue | Where-Object { ($_.Actions | Out-String) -match $IOC } |
+    Format-List * | Out-String | Set-Content "$LogDir\tasks_before.txt"
+Get-CimInstance Win32_Service | Where-Object { ($_.Name + ' ' + $_.DisplayName + ' ' + $_.PathName) -match $IOC } |
+    Format-List * | Out-String | Set-Content "$LogDir\services_before.txt"
+
+[Remaining remediation code omitted from this extract.]

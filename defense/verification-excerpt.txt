@@ -1,0 +1,15 @@
+Selected lines — original defense/VERIFY_AFTER_REBOOT.ps1.
+Documentary excerpt; not execution output. Final transcript unavailable.
+
+Write-Host '=== FILE IOCs ===' -ForegroundColor Cyan
+@(
+ "$env:LOCALAPPDATA\[zwHwLAbE", "$env:LOCALAPPDATA\ifwf.e4", "$env:LOCALAPPDATA\4UUZEw.png",
+ "$env:LOCALAPPDATA\jaw9Bytr4W.png", "$env:LOCALAPPDATA\ql2vj.png", "$env:LOCALAPPDATA\Datavahijoex",
+ "$env:TEMP\S.msi", 'C:\Windows\Installer\89ad2fc.msi'
+) | ForEach-Object { [pscustomobject]@{Path=$_;Present=(Test-Path -LiteralPath $_)} } | Format-Table -AutoSize
+Write-Host '=== PROCESSES ===' -ForegroundColor Cyan
+Get-CimInstance Win32_Process | Where-Object { ($_.CommandLine+' '+$_.ExecutablePath) -match $IOC } | Select ProcessId,Name,ExecutablePath,CommandLine | Format-List
+Write-Host '=== SERVICES ===' -ForegroundColor Cyan
+Get-CimInstance Win32_Service | Where-Object { ($_.Name+' '+$_.DisplayName+' '+$_.PathName) -match $IOC } | Select Name,DisplayName,State,PathName | Format-List
+Write-Host '=== TASKS ===' -ForegroundColor Cyan
+Get-ScheduledTask -ErrorAction SilentlyContinue | Where-Object { ($_.Actions | Out-String) -match $IOC } | Select TaskPath,TaskName,State,Actions | Format-List

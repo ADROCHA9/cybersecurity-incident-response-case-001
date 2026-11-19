@@ -1,0 +1,13 @@
+capability,evidence,confidence
+Browser cookies,chrome.cookies and GET_COOKIES logic,High
+Browser history,GET_HISTORY logic and manifest permission,High
+Downloads,GET_DOWNLOADS and manifest permission,High
+Tab navigation/fetch,TAB_NAVIGATE_AND_FETCH logic,High
+Extension management,chrome.management logic,High
+Request/form observation,requestBody/formData logic,High
+Clipboard monitoring/manipulation,clipboard permissions and JS logic,High
+Seed phrase detection,bip39Wordlist and moneroWordlist and mnemonic processing,High
+Screen capture,screen_cap command present,Medium-High
+CSP weakening,rule removes CSP/X-Frame-Options headers,High
+In-memory loader,Historical MSI static analysis documents encrypted payload and memory mapping,High
+Exfiltration of a specific secret,Not established,Unknown
